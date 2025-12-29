@@ -8,16 +8,16 @@ Code for researching deniable encryption. Create a vault with multiple encrypted
 ```
 python shadow.py --encrypt \
   --datastring "Grocery list: milk, eggs, bread" \
-  --password "groceries123" \
+  --password "pass phrase 1" \
   --datastring2 "Bank account: 123456789, PIN: 4321" \
-  --password2 "MyRealSecurePassword!2025" \
+  --password2 "pass phrase 2" \
   --out personal.vault
 
 # Decrypt the first data set
-python shadow.py --decrypt --password "groceries123" --in personal.vault
+python shadow.py --decrypt --password "pass phrase 1" --in personal.vault
 
 # Decrypt the second data set
-python shadow.py --decrypt --password "MyRealSecurePassword!2025" --in personal.vault --block 2
+python shadow.py --decrypt --password "pass phrase 2" --in personal.vault --block 2
 ```
 
 ### Example 2: Encrypt two different files:
