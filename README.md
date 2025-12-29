@@ -1,6 +1,25 @@
 # shadow-vault
 Code for researching deniable encryption. Create a vault with multiple encrypted slots, some containing encrypted data, some containing random data, with no provable difference.
 
+## Overview
+
+Shadow Vault creates encrypted vaults that can contain two independent datasets, each encrypted with a different password. When decrypted with one password, it reveals one dataset; when decrypted with the other password, it reveals a different dataset. If you only provide one dataset during encryption, the tool automatically generates fake ciphertext for the second slot, making it indistinguishable from a real encrypted dataset.
+
+## Features
+
+- **Dual-dataset encryption**: Store two independent datasets in a single file
+- **Plausible deniability**: The existence of a second dataset is cryptographically hidden
+- **Strong encryption**: Uses AES-256 in CTR mode with Scrypt key derivation
+- **Flexible input**: Encrypt text strings or file contents
+- **Block interleaving**: Datasets are interleaved at the block level for security
+
+## Requirements
+
+```
+pip install cryptography
+cd code
+```
+
 ## Examples
 
 ### Example 1: Create a vault with two sets of data:
