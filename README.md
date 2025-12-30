@@ -69,3 +69,11 @@ python shadow.py --encrypt \
 # Decrypt
 python shadow.py --decrypt --password "my pass phrase" --in shadow.vault
 ```
+
+## Notes
+
+This app provides a minimal level of plausible deniability, though a version with more than 2 layers of data would provide more. Keep in mind:
+- Use strong, unique passwords for each dataset
+- Ensure the fake dataset scenario is plausible
+- Understand that cryptanalysis may reveal patterns with sufficient access
+- This is a prototype - use at your own risk for sensitive data
